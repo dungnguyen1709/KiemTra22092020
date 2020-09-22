@@ -1,4 +1,6 @@
 package com.codegym.repository;
 
-public interface CategoryRepository {
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+public interface CategoryRepository extends PagingAndSortingRepository {
 }
