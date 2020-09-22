@@ -26,7 +26,7 @@ public class CategoryController {
     public ModelAndView listCategory(){
         Iterable<Category> categorys = categoryService.findAll();
         ModelAndView modelAndView = new ModelAndView("/category/list");
-        modelAndView.addObject("categotys", categorys);
+        modelAndView.addObject("categorys", categorys);
         return modelAndView;
     }
 
