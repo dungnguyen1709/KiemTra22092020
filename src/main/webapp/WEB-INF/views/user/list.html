@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List User</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+</head>
+<body>
+<h1>User List</h1>
+<form>
+    Search by username :
+    <input name="s" type="text">
+    <input type="submit" value="Search">
+</form>
+<a th:href="@{/create-user}">Create new User</a>
+<div class="container">
+    <table class="table table-hover" th:object="${users}">
+        <tr>
+            <th>ID</th>
+            <th>User name</th>
+            <th>Address</th>
+            <th>Phone number</th>
+            <th>Category</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr>
+            <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.address}"></td>
+        <td th:text="${user.phoneNumber}"></td>
+        <td th:text="${user.category.name}"></td>
+        <td><a th:href="@{/edit-user/__${user.id}__}">Edit</a> </td>
+        <td><a th:href="@{/delete-user/__${user.id}__}">Delete</a> </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

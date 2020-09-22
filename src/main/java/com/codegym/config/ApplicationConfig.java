@@ -49,12 +49,12 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     }
 
     @Bean
-    public UserService customerService(){
+    public UserService userService(){
         return new UserServiceImpl();
     }
 
     @Bean
-    public CategoryService provinceService(){
+    public CategoryService categoryService(){
         return new CategoryServiceImpl();
     }
 

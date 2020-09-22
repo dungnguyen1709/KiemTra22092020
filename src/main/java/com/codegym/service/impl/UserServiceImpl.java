@@ -1,5 +1,6 @@
 package com.codegym.service.impl;
 
+import com.codegym.model.Category;
 import com.codegym.model.User;
 import com.codegym.repository.UserRepository;
 import com.codegym.service.UserService;
@@ -34,12 +35,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Page<User> findAllByUserNameContaining(String username, Pageable pageable) {
-        return userRepository.findAllByUserNameContaining(username,pageable);
+    public Page<User> findAllByusernameContaining(String username, Pageable pageable) {
+        return userRepository.findAllByusernameContaining(username,pageable);
     }
+
 
     @Override
     public Page<User> findAll(Pageable pageable) {
         return userRepository.findAll(pageable);
+    }
+
+    @Override
+    public Iterable<User> findAllByCategory(Category category) {
+        return userRepository.findAllByCategory(category);
     }
 }
